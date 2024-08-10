@@ -8,6 +8,10 @@ public class FibonacciIndexer {
         if (fibonacci >= 0 && fibonacci < 2) {
             return (int) fibonacci;
         }
+        return seek(fibonacci);
+    }
+
+    private static int seek(long fibonacci) {
         int indexOfFibonacci = -1;
         int currentIndex = 2;
         long f = 0;
