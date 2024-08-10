@@ -1,9 +1,11 @@
 
 public class FootballScoreStats {
 
+	private final FootballData footballData = new FootballData();
+
 	public int teamTotal(String teamName) {
 		int total = 0;
-		Game[] played = getAllPlayed();
+		Game[] played = footballData.getAllPlayed();
 		for (Game game : played) {
 			if(game.getHomeTeam().equals(teamName)){
 				total += game.getHomeTeamScore();
@@ -16,11 +18,7 @@ public class FootballScoreStats {
 	}
 
 	private Game[] getAllPlayed() {
-		Game[] played = new Game[3];
-		played[0] = new Game("Liverpool", 2, "Everton", 0);
-		played[1] = new Game("Aston Villa", 1, "Liverpool", 1);
-		played[2] = new Game("Liverpool", 3, "West Ham", 1);
-		return played;
+		return footballData.getAllPlayed();
 	}
 
 }
