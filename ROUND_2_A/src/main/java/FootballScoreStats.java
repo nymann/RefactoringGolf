@@ -1,9 +1,13 @@
 
 public class FootballScoreStats {
 
-	private final FootballData footballData = new FootballData();
+	private final FootballData footballData;
 
-	public int teamTotal(String teamName) {
+    public FootballScoreStats() {
+        footballData = new FootballData();
+    }
+
+    public int teamTotal(String teamName) {
 		int total = 0;
 		Game[] played = footballData.getAllPlayed();
 		for (Game game : played) {
