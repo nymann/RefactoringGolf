@@ -17,8 +17,4 @@ public class FootballScoreStats {
 		return total;
 	}
 
-	private Game[] getAllPlayed() {
-		return footballData.getAllPlayed();
-	}
-
 }
