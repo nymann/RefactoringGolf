@@ -3,8 +3,8 @@ public class FootballScoreStats {
 
 	private final FootballData footballData;
 
-    public FootballScoreStats() {
-        footballData = new FootballData();
+    public FootballScoreStats(FootballData footballData) {
+        this.footballData = footballData;
     }
 
     public int teamTotal(String teamName) {
