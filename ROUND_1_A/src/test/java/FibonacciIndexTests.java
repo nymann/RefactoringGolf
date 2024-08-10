@@ -4,9 +4,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -34,7 +31,11 @@ public class FibonacciIndexTests {
 	public void findsIndexOfFibonacciNumber(int expectedIndex, long fibonacci) {
 		assertEquals(expectedIndex, findIndexOf(fibonacci));
 	}
-	
+
+	private int findIndexOf(long fibonacci) {
+		return new FibonacciIndexer().findIndexOf(fibonacci);
+	}
+
 	@Test
 	public void whenNumberNotFoundThenIndexIsMinusOne() {
 		assertEquals(-1, findIndexOf(7));
@@ -43,25 +44,6 @@ public class FibonacciIndexTests {
 	@Test
 	public void cannotFindIndexOfNegativeNumber() {
 		assertEquals(-1, findIndexOf(-1));
-	}
-	
-	private int findIndexOf(long fibonacci) {
-		if(fibonacci >= 0 && fibonacci < 2){
-			return (int)fibonacci;
-		}
-		int indexOfFibonacci = -1;
-		int currentIndex = 2;
-		long f = 0;
-		List<Long> sequence = new ArrayList<Long>(Arrays.asList(0L, 1L));
-		while(f < fibonacci){
-			f = sequence.get(currentIndex - 1) + sequence.get(currentIndex - 2);
-			if(f == fibonacci)
-				indexOfFibonacci = currentIndex;
-			sequence.add(f);
-			currentIndex++;
-		}
-	
-		return indexOfFibonacci;
 	}
 
 
