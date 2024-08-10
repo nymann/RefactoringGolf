@@ -11,7 +11,7 @@ public class FibonacciIndexer {
         int indexOfFibonacci = -1;
         int currentIndex = 2;
         long f = 0;
-        List<Long> sequence = new ArrayList<Long>(Arrays.asList(0L, 1L));
+        List<Long> sequence = buildInitialSequence();
         while (f < fibonacci) {
             f = sequence.get(currentIndex - 1) + sequence.get(currentIndex - 2);
             if (f == fibonacci) indexOfFibonacci = currentIndex;
@@ -20,5 +20,9 @@ public class FibonacciIndexer {
         }
 
         return indexOfFibonacci;
+    }
+
+    private static ArrayList<Long> buildInitialSequence() {
+        return new ArrayList<Long>(Arrays.asList(0L, 1L));
     }
 }
