@@ -1,7 +1,4 @@
 public class FootballData implements GameData {
-    public FootballData() {
-    }
-
      @Override
      public Game[] getAllPlayed() {
         Game[] played = new Game[3];
