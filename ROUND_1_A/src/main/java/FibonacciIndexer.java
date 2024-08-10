@@ -11,7 +11,7 @@ public class FibonacciIndexer {
         return seek(fibonacci);
     }
 
-    private static int seek(long fibonacci) {
+    private int seek(long fibonacci) {
         int indexOfFibonacci = -1;
         int currentIndex = 2;
         long f = 0;
